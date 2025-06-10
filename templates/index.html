@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Upload Example</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+  <header>
+    <h1>Pulmonary Embolism Detection</h1>
+  </header>
+  <div class="page">
+  <div class="container">
+
+    <div class="error" id="error-message"></div>
+
+    <div class="control-panel">
+      <div class="left-panel">
+        <div class="button-row">
+          <label for="file-upload" class="action-button upload-button">Select DICOM File</label>
+          <input type="file" id="file-upload" accept=".dcm" style="display: none;">
+          <button id="predict-btn" class="action-button analyze-button">Analyze</button>
+        </div>
+
+        <div class="results" id="results">
+          <p><strong>Prediction:</strong> <span id="prediction-class"></span></p>
+          <p><strong>Confidence:</strong> <span id="prediction-confidence"></span></p>
+        </div>
+
+        <a id="download-btn" class="download-button">Download Annotated DICOM</a>
+      </div>
+
+      <div class="right-panel">
+        <div class="preview-container">
+          <img id="image-preview">
+        </div>
+        <div class="file-info" id="file-info">No file selected</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
